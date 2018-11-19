@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+
+	<class name="modal.OgrenciBilgisi"
+		   table="OGRENCI_BILGISI"
+		   catalog="HIBERNATECALISMAORTAMI">
+	
+		<id name="id" type="java.lang.Integer">
+			<column name="ID"></column>
+			<generator class="foreign">
+				<param name="property">ogrenci</param> <!-- private Ogrenci ogrenci; -->
+			</generator>
+		</id>	
+		
+		<property name="adres" type="string">
+			<column name="ADRES" length="80" not-null="true" />
+		</property>
+	
+		<property name="kayitNo" type="string">
+			<column name="KAYIT_NO" length="80" not-null="true" />
+		</property>
+		
+		<property name="telefonNo" type="string">
+			<column name="TELEFON_NO" length="80" not-null="true" />
+		</property>
+		
+		<property name="email" type="string">
+			<column name="EMAIL" length="80" not-null="true" />
+		</property>
+				
+		<property name="kayitTarihi" type="date">
+			<column name="KAYIT_TARIHI" length="80" not-null="true" />
+		</property>
+		
+		<property name="dogumTarihi" type="date">
+			<column name="DOGUM_TARIHI" length="80" not-null="true" />
+		</property>
+		
+		
+		<one-to-one name="ogrenci" class="modal.Ogrenci" constrained="true"/> 
+		<!-- constrained="true" -> kayıtların güncellenmesini sağlaması için  --> 
+	
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+
+	<class name="modal.Calisan"
+		   table="CALISAN"
+		   catalog="HIBERNATECALISMAORTAMI">
+	
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" />
+			<generator class="sequence"></generator>
+		</id>	
+		
+		<property name="ad" type="string">
+			<column name="AD" length="50"  />
+		</property>
+	
+		<property name="soyad" type="string">
+			<column name="SOYAD" length="80"  />
+		</property>
+		
+		<property name="dogumTarih" type="date">
+			<column name="DOGUM_TARIH" length="80"  />
+		</property>
+		
+		<property name="telefonNo" type="string">
+			<column name="TELEFON_NO" length="80"  />
+		</property>
+		
+		
+		<many-to-one name="departman" class="modal.Departman" fetch="select"> 
+			<column name="DEPARTMAN_ID" not-null="true"></column>
+		</many-to-one>
+		<!-- fetch="select" -> Kayıtların alınması ve kullanılmasında kullanılır -->
+	
+	</class>
+
+</hibernate-mapping>
