@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+
+	<class name="modal.Adres"
+		   table="DERS"
+		   catalog="HIBERNATECALISMAORTAMI">
+		   
+		<meta attribute="class-description">ADRES SINIFIN DETAYLARI</meta>
+	
+		<id name="adresId" type="java.lang.Long">
+			<column name="ADRES_ID"></column>
+			<generator class="native"></generator>
+		</id>	
+		
+		<property name="cadde" type="string">
+			<column name="CADDE" length="80"  />
+		</property>
+	
+		<property name="sehir" type="string">
+			<column name="SEHIR" length="80"  />
+		</property>
+		
+		<property name="semt" type="string">
+			<column name="SEMT" length="80"  />
+		</property>
+		
+		<property name="postakodu" type="string">
+			<column name="POSTAKODU" length="80"  />
+		</property>
+	
+	</class>
+
+</hibernate-mapping>

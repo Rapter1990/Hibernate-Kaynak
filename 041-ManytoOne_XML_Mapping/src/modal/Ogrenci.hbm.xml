@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+
+	<class name="modal.Ogrenci"
+		   table="OGRENCI"
+		   catalog="HIBERNATECALISMAORTAMI">
+		   
+		<meta attribute="class-description">OGRENCI SINIFIN DETAYLARI</meta>
+	
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" />
+			<generator class="native"></generator>
+		</id>	
+		
+		<property name="ad" type="string" lazy="false">
+			<column name="AD" length="50" not-null="true"  />
+		</property>
+	
+		<property name="soyad" type="string" lazy="false">
+			<column name="SOYAD" length="80" not-null="true"  />
+		</property>
+		
+		<many-to-one name="adres" cascade="all" class="modal.Adres" 
+		column="OGRENCI_ADRES" not-null="true" 
+		/>
+	
+	</class>
+
+</hibernate-mapping>
