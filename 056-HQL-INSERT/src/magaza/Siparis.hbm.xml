@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 20.Ara.2017 08:37:22 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="magaza.Siparis" table="SIPARIS">
+        <id name="siparisId" type="java.lang.Long">
+            <column name="SIPARISID" />
+            <generator class="native" />
+        </id>
+        <property name="siparisurunId" type="long">
+            <column name="SIPARISURUNID" />
+        </property>
+        <property name="siparisurunAdi" type="java.lang.String">
+            <column name="SIPARISURUNADI" />
+        </property>
+        <property name="siparisurunFiyati" type="double">
+            <column name="SIPARISURUNFIYATI" />
+        </property>
+    </class>
+</hibernate-mapping>
